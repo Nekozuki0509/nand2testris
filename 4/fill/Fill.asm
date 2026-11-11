@@ -9,3 +9,48 @@
 // the screen should be cleared.
 
 //// Replace this comment with your code.
+@8192
+D=A
+@n
+M=D
+(LOOP)
+  @i
+  M=0
+  @KBD
+  D=M
+  @WHITE
+  D;JEQ
+  @BLACK
+  0;JMP
+(BLACK)
+  @color
+  M=-1
+  @WRITE
+  0;JMP
+(WHITE)
+  @color
+  M=0
+  @WRITE
+  0;JMP
+(WRITE)
+  @i
+  D=M
+  @n
+  D=D-M
+  @LOOP
+  D;JEQ
+  @i
+  D=M
+  @SCREEN
+  D=A+D
+  @m
+  M=D
+  @color
+  D=M
+  @m
+  A=M
+  M=D
+  @i
+  M=M+1
+  @WRITE
+  0;JMP
